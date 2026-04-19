@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buffet Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Retro Restaurant Adventure</p>
+        <h1>Buffet Buddy</h1>
+      </div>
+      <div class="instructions">
+        <h2>How To Play</h2>
+        <p>Arrow keys: move</p>
+        <p>Enter or Space: inspect nearby station</p>
+        <p>Escape: close station view</p>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="status-panel">
+        <h2>Dining Room</h2>
+        <p id="statusText">Walk to a buffet station and press Enter or Space.</p>
+        <div class="legend">
+          <span><i class="legend-dot player-dot"></i> Player</span>
+          <span><i class="legend-dot buffet-dot"></i> Buffet</span>
+          <span><i class="legend-dot table-dot"></i> Table Area</span>
+        </div>
+      </section>
+
+      <section class="game-board-wrap">
+        <div id="gameBoard" class="game-board" aria-label="Restaurant map">
+          <div id="player" class="player" aria-label="Player"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="detailOverlay" class="detail-overlay hidden" aria-hidden="true">
+    <div class="detail-card">
+      <div class="detail-header">
+        <div>
+          <p class="eyebrow">Buffet Station</p>
+          <h2 id="detailTitle">Station</h2>
+        </div>
+        <button id="backButton" class="back-button" type="button">Back</button>
+      </div>
+
+      <p id="detailHint" class="detail-hint">
+        Press Escape or click Back to return to the restaurant.
+      </p>
+
+      <div id="detailFoods" class="detail-foods"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
