@@ -7,6 +7,47 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <aside class="hud-stack" aria-live="polite">
+    <section class="plate-hud">
+      <p class="eyebrow">Your Plate</p>
+      <h2>Buffet Plate</h2>
+      <div class="meter-row">
+        <span id="platePercent">0% full</span>
+        <span id="plateCount">0 items</span>
+      </div>
+      <div class="meter">
+        <div id="plateMeterFill" class="meter-fill plate-fill"></div>
+      </div>
+      <div id="plateVisual" class="plate-visual">
+        <div class="plate-base"></div>
+        <div id="plateItems" class="plate-items"></div>
+      </div>
+      <p id="plateMessage" class="hud-message">Your plate is empty. Pick foods from the stations.</p>
+      <button id="clearPlateButton" class="clear-button" type="button">Clear Plate</button>
+    </section>
+
+    <section class="cup-hud">
+      <p class="eyebrow">Your Cup</p>
+      <h2>Buffet Cup</h2>
+      <div class="meter-row">
+        <span id="cupPercent">0% full</span>
+        <span id="cupCount">0 drinks</span>
+      </div>
+      <div class="meter">
+        <div id="cupMeterFill" class="meter-fill cup-fill"></div>
+      </div>
+      <div id="cupVisual" class="cup-visual">
+        <div class="cup-straw"></div>
+        <div class="cup-body">
+          <div id="cupLiquid" class="cup-liquid"></div>
+          <div id="cupItems" class="cup-items"></div>
+        </div>
+      </div>
+      <p id="cupMessage" class="hud-message">Your cup is empty. Visit the drink station for a sip.</p>
+      <button id="clearCupButton" class="clear-button" type="button">Clear Cup</button>
+    </section>
+  </aside>
+
   <div class="game-shell">
     <header class="topbar">
       <div>
@@ -17,6 +58,7 @@
         <h2>How To Play</h2>
         <p>Arrow keys: move</p>
         <p>Enter or Space: inspect nearby station</p>
+        <p>Click Add To Plate or Pour Into Cup</p>
         <p>Escape: close station view</p>
       </div>
     </header>
@@ -57,6 +99,8 @@
       <div id="detailFoods" class="detail-foods"></div>
     </div>
   </div>
+
+  <div id="animationLayer" class="animation-layer" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>
